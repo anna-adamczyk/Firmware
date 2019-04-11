@@ -101,7 +101,6 @@ void ObstacleAvoidance::injectAvoidanceSetpoints(Vector3f &pos_sp, Vector3f &vel
 	if (avoidance_data_timeout || !avoidance_point_valid) {
 		PX4_WARN("Obstacle Avoidance system failed, loitering");
 		_publishVehicleCmdDoLoiter();
-		return;
 	}
 
 	pos_sp = _sub_vehicle_trajectory_waypoint->get().waypoints[vehicle_trajectory_waypoint_s::POINT_0].position;
